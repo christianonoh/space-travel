@@ -1,9 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import styles from '../styles/missions.module.css';
 import Button from './Button';
+import { fetchData } from '../redux/missions/missionsSlice';
 
 const Missions = () => {
   const missionsArr = useSelector((store) => store.missions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
 
   return (
     <section>
