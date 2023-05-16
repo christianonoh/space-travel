@@ -20,16 +20,26 @@ const initialState = [];
 const missionsReducer = createSlice({
   name: 'missions',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleMissionReserved: (state, payload) => {
+      const missionId = payload.payload;
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== missionId) return mission;
+        return { ...mission, reserved: !mission.reserved };
+      });
+      return newState;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
-      const dataWithStatus = action.payload.map((mission) => ({
+      const dataWithReserved = action.payload.map((mission) => ({
         ...mission,
-        status: false,
+        reserved: false,
       }));
-      return dataWithStatus;
+      return dataWithReserved;
     });
   },
 });
 
+export const { toggleMissionReserved } = missionsReducer.actions;
 export default missionsReducer.reducer;
