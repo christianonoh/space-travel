@@ -4,13 +4,13 @@ import Layout from './components/Layout';
 import Missions from './routes/MissionsPage';
 import Profile from './routes/Profile';
 import NotMatch from './routes/NotMatch';
-import Rockets from './routes/Rockets';
+import RocketsPage from './routes/RocketsPage';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Rockets />} />
+        <Route index element={<RocketsPage />} />
         <Route path="missions" element={<Missions />} />
         <Route path="profile" element={<Profile />} />
         <Route path="*" element={<NotMatch />} />
