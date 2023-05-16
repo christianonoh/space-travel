@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
-import Missions from './routes/Missions';
+import Missions from './routes/MissionsPage';
 import Profile from './routes/Profile';
 import NotMatch from './routes/NotMatch';
 import Rockets from './routes/Rockets';
