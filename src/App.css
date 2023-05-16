@@ -8,7 +8,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
 }
 
 body {
@@ -69,7 +69,7 @@ nav .active {
 /* ========================================================
  ROCKETS
  ========================================================  */
-.rocket-card {
+ .rocket-card {
   display: flex;
   width: 90%;
   border-radius: 5px;
