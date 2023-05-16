@@ -1,9 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import styles from '../styles/missions.module.css';
 import Button from './Button';
+import { fetchData } from '../redux/missions/missionsSlice';
 
 const Missions = () => {
   const missionsArr = useSelector((store) => store.missions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, []);
 
   return (
     <section>
@@ -23,13 +30,13 @@ const Missions = () => {
               <td>{row.description}</td>
               <td>
                 {row.status ? (
-                  <span className={`${styles.badge} ${styles['badge-success']}`}>Member</span>
+                  <span className={`${styles.badge} ${styles['badge-success']}`}>ACTIVE MEMBER</span>
                 ) : (
-                  <span className={`${styles.badge} ${styles['badge-danger']}`}>Not a member</span>
+                  <span className={`${styles.badge} ${styles['badge-danger']}`}>NOT A MEMBER</span>
                 )}
               </td>
               <td>
-                <Button title={row.status ? 'Leave' : 'Join'} />
+                <Button title={row.status ? 'Leave Mission' : 'Join Mission'} className={row.status ? 'leaveBtn' : 'joinBtn'} />
               </td>
             </tr>
           ))}
