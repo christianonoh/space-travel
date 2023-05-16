@@ -40,3 +40,18 @@ nav .active {
   gap: 0.5rem;
 }
 #logo { height: calc(5vmin + 1rem); }
+
+/* ========================================================  */
+
+/* MISSIONS  */
+
+/* ========================================================  */
+.leaveBtn {
+  color: red;
+  border: 1px solid red;
+}
+
+.joinBtn {
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}

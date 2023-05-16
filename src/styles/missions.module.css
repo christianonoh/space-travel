@@ -1,6 +1,7 @@
 .mission-table {
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 .mission-table th {
@@ -40,17 +41,17 @@
 .mission-table .badge {
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 0.5rem;
   font-weight: bold;
 }
 
 .mission-table .badge-success {
-  background-color: #5cb85c;
+  background-color: #8ecae6;
   color: #fff;
 }
 
 .mission-table .badge-danger {
-  background-color: #d9534f;
+  background-color: #6c757d;
   color: #fff;
 }
 
@@ -60,4 +61,5 @@
   font-size: 12px;
   display: block;
   margin: 0 auto;
+  background-color: unset;
 }

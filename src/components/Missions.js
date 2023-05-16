@@ -30,13 +30,13 @@ const Missions = () => {
               <td>{row.description}</td>
               <td>
                 {row.status ? (
-                  <span className={`${styles.badge} ${styles['badge-success']}`}>Member</span>
+                  <span className={`${styles.badge} ${styles['badge-success']}`}>ACTIVE MEMBER</span>
                 ) : (
-                  <span className={`${styles.badge} ${styles['badge-danger']}`}>Not a member</span>
+                  <span className={`${styles.badge} ${styles['badge-danger']}`}>NOT A MEMBER</span>
                 )}
               </td>
               <td>
-                <Button title={row.status ? 'Leave' : 'Join'} />
+                <Button title={row.status ? 'Leave Mission' : 'Join Mission'} className={row.status ? 'leaveBtn' : 'joinBtn'} />
               </td>
             </tr>
           ))}
