@@ -23,6 +23,10 @@ nav {
   background-color: var(--White);
 }
 
+nav .active {
+  text-decoration: underline;
+}
+
 .nav-items {
   display: flex;
   align-items: center;
