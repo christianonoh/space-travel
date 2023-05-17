@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import RocketCard from '../components/RocketCard';
+import { fetchRocketData } from '../redux/slicers/rocketSlice';
 
-function RocketsPage() {
-  const [rocketData, setRocketData] = useState([]);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://api.spacexdata.com/v4/rockets');
-      const data = await response.json();
-      setRocketData(data);
-    } catch (error) {
-      console.error('Error fetching rocket data:', error);
-    }
-  };
+const RocketsPage = () => {
+  const rockets = useSelector((store) => store.rockets);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchRocketData());
+  }, [dispatch]);
 
   return (
     <div>
-      {rocketData.map((rocket) => (
+      {rockets.data.map((rocket) => (
         <RocketCard
           key={rocket.id}
           name={rocket.name}
@@ -30,6 +23,6 @@ function RocketsPage() {
       ))}
     </div>
   );
-}
+};
 
 export default RocketsPage;
