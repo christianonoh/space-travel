@@ -110,3 +110,27 @@ nav .active {
   color: white;
   font-size: 1.5rem;
 }
+
+/* ========================================================
+ Profile
+ ========================================================  */
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin: 2rem auto;
+  gap: 5vmin;
+}
+
+.active-missions ul :first-child {
+  border-top: 1px solid grey;
+  margin-top: 1rem;
+}
+
+.active-mission {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 4vmin;
+}
+
