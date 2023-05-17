@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import styles from '../styles/missions.module.css';
 import Button from './Button';
-import { fetchData, toggleMissionReserved } from '../redux/missions/missionsSlice';
+import { fetchData, toggleMissionReserved } from '../redux/slicers/missionsSlice';
 
 const Missions = () => {
   const missions = useSelector((store) => store.missions);
