@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 const Profile = () => {
   const missionsArr = useSelector((store) => store.missions);
+  const reservedRockets = useSelector((store) => store.rocketsReserved);
 
   // Check if the missionsArr has data
   if (!missionsArr.data || missionsArr.data.length === 0) {
@@ -28,16 +29,16 @@ const Profile = () => {
         </ul>
       </div>
       <div className="active-missions">
-        <h2>My Missions</h2>
+        <h2>My Rockets</h2>
         <ul>
-          {reservedMissions.length > 0 ? (
-            reservedMissions.map((mission) => (
-              <li className="active-mission" key={mission.mission_id}>
-                {mission.mission_name}
+          {reservedRockets.length > 0 ? (
+            reservedRockets.map((rocket) => (
+              <li className="active-mission" key={rocket.id}>
+                {rocket.name}
               </li>
             ))
           ) : (
-            <div>No reserved missions found.</div>
+            <div>No reserved rockets found.</div>
           )}
         </ul>
       </div>
