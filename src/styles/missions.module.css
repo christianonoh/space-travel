@@ -43,17 +43,12 @@
   border-radius: 4px;
   font-size: 0.5rem;
   font-weight: bold;
-}
-
-.mission-table .badge-success {
-  background-color: #28a2b9;
   color: #fff;
 }
 
-.mission-table .badge-danger {
-  background-color: #6c757d;
-  color: #fff;
-}
+.mission-table .badge-success { background-color: #28a2b9; }
+
+.mission-table .badge-danger { background-color: #6c757d; }
 
 .mission-table button {
   padding: 4px 8px;

@@ -5,15 +5,16 @@ import Button from './Button';
 import { fetchData, toggleMissionReserved } from '../redux/missions/missionsSlice';
 
 const Missions = () => {
-  const missionsArr = useSelector((store) => store.missions);
+  const missions = useSelector((store) => store.missions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, []);
+    if (missions.status === 'idle') {
+      dispatch(fetchData());
+    }
+  }, [missions.status, dispatch]);
 
   const handleToggleReserved = (id) => {
-    // console.log(id);
     dispatch(toggleMissionReserved(id));
   };
   return (
@@ -28,7 +29,7 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missionsArr.map((row) => (
+          {missions.data.map((row) => (
             <tr key={row.mission_id}>
               <td>{row.mission_name}</td>
               <td>{row.description}</td>

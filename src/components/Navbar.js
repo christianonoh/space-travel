@@ -13,7 +13,6 @@ function Navbar() {
       <Link to="/">
         <div className="logo-container">
           <img src={logo} id="logo" alt="Logo" />
-          <p>Space Travellers</p>
         </div>
       </Link>
       <ul className="nav-items">

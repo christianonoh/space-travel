@@ -6,7 +6,7 @@ export const fetchData = createAsyncThunk('missions/fetchData', async () => {
     method: 'get',
     maxBodyLength: Infinity,
     url: 'https://api.spacexdata.com/v3/missions/',
-    headers: { },
+    headers: {},
   };
   const response = await axios.request(config);
   if (response.data) {
@@ -15,19 +15,23 @@ export const fetchData = createAsyncThunk('missions/fetchData', async () => {
   return [];
 });
 
-const initialState = [];
+const initialState = {
+  data: [],
+  status: 'idle',
+  error: null,
+};
 
 const missionsReducer = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    toggleMissionReserved: (state, payload) => {
-      const missionId = payload.payload;
-      const newState = state.map((mission) => {
+    toggleMissionReserved: (state, action) => {
+      const missionId = action.payload;
+      const newData = state.data.map((mission) => {
         if (mission.mission_id !== missionId) return mission;
         return { ...mission, reserved: !mission.reserved };
       });
-      return newState;
+      return { ...state, data: newData };
     },
   },
   extraReducers: (builder) => {
@@ -36,7 +40,7 @@ const missionsReducer = createSlice({
         ...mission,
         reserved: false,
       }));
-      return dataWithReserved;
+      return { ...state, data: dataWithReserved, status: 'fulfilled' };
     });
   },
 });

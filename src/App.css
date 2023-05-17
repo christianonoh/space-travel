@@ -30,19 +30,36 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 10vmin 0.2rem 10vmin;
+  padding: 1rem 7vmin 0.2rem 7vmin;
   border-bottom: 1px solid var(--Grey);
   background-color: var(--White);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav .active {
-  text-decoration: underline;
+  background-color: #1974b3;
+  color: #fff !important;
 }
 
 .nav-items {
   display: flex;
   align-items: center;
-  gap: 5vmin;
+  gap: 20px;
+}
+
+.nav-item a {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  color: #1974b3;
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
+.nav-item a:hover {
+  background-color: #12679b;
+  color: #fff;
 }
 
 .logo-container {
@@ -108,4 +125,28 @@ nav .active {
   border-radius: 5px;
   color: white;
   font-size: 1.5rem;
+}
+
+/* ========================================================
+ Profile
+ ========================================================  */
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vmin;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.active-missions ul :first-child {
+  border-top: 1px solid grey;
+  margin-top: 1rem;
+}
+
+.active-mission {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 2vmin;
 }
