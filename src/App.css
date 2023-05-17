@@ -124,7 +124,6 @@ nav .active {
 }
 
 .active-missions ul :first-child {
-  /* background-color: #8ecae6; */
   border-top: 1px solid grey;
   margin-top: 1rem;
 }
