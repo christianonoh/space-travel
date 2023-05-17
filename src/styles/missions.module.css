@@ -2,6 +2,7 @@
   border-collapse: collapse;
   width: 90%;
   margin: 2rem auto;
+  font-size: 1.4rem;
 }
 
 .mission-table th {
@@ -41,7 +42,7 @@
 .mission-table .badge {
   padding: 4px 8px;
   border-radius: 4px;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-weight: bold;
   color: #fff;
 }
@@ -51,9 +52,9 @@
 .mission-table .badge-danger { background-color: #6c757d; }
 
 .mission-table button {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
   display: block;
   margin: 0 auto;
   background-color: unset;
