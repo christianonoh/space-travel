@@ -125,6 +125,15 @@ nav .active {
   background-color: #688490;
 }
 
+.reserved-tag {
+  background-color: rgb(203, 35, 35);
+  color: white;
+  padding: 1vh;
+  width: 10%;
+  line-height: 0.3rem;
+  border-radius: 5px;
+  text-align: center;
+}
 /* ========================================================
  Profile
  ========================================================  */
