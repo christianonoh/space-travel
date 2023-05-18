@@ -44,8 +44,8 @@ The Space Traveler app is an interactive platform that provides users with infor
 
 ### Key Features <a name="key-features"></a>
 
-- **Store Books.**
-- **Delete unwanted books.**
+- **Reserve Rockets and Missions.**
+- **Keep track of your reservations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
