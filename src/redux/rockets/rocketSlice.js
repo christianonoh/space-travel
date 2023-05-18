@@ -18,7 +18,6 @@ export const fetchRockets = createAsyncThunk('rockets/fetchData', async () => {
 const initialState = {
   rockets: [],
   reservedRockets: [],
-  status: 'idle',
   loading: false,
   error: null,
 };
@@ -38,9 +37,17 @@ const rocketSlice = createSlice({
         }
         return rocket;
       });
-      const updatedReservedRockets = updatedRockets
-        .filter((rocket) => rocket.reserved)
-        .map((rocket) => rocket.id);
+      let updatedReservedRockets;
+      if (state.reservedRockets.length > 0) {
+        updatedReservedRockets = [...state.reservedRockets];
+        if (updatedReservedRockets.includes(rocketID)) {
+          updatedReservedRockets = updatedReservedRockets.filter((id) => id !== rocketID);
+        } else {
+          updatedReservedRockets.push(rocketID);
+        }
+      } else {
+        updatedReservedRockets = [rocketID];
+      }
       return {
         ...state,
         rockets: updatedRockets,
