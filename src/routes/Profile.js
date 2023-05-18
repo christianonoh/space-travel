@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 const Profile = () => {
   const missionsArr = useSelector((store) => store.missions);
   const reservedRockets = useSelector((state) => state.rockets.reservedRockets);
+  const rockets = useSelector((state) => state.rockets.rockets);
 
   // Check if the missionsArr has data
   if (!missionsArr.data || missionsArr.data.length === 0) {
@@ -11,6 +12,9 @@ const Profile = () => {
   }
 
   const reservedMissions = missionsArr.data.filter((mission) => mission.reserved === true);
+  const reservedRocketNames = rockets
+    .filter((rocket) => reservedRockets.includes(rocket.id))
+    .map((rocket) => rocket.name);
 
   return (
     <section className="profile">
@@ -31,10 +35,10 @@ const Profile = () => {
       <div className="active-missions">
         <h2>My Rockets</h2>
         <ul>
-          {reservedRockets.length > 0 ? (
-            reservedRockets.map((rocket) => (
-              <li className="active-mission" key={rocket.id}>
-                {rocket.name}
+          {reservedRocketNames.length > 0 ? (
+            reservedRocketNames.map((rocketName) => (
+              <li className="active-mission" key={rocketName}>
+                {rocketName}
               </li>
             ))
           ) : (
