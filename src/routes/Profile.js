@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 const Profile = () => {
   const missionsArr = useSelector((store) => store.missions);
+  const reservedRockets = useSelector((state) => state.rockets.reservedRockets);
+  const rockets = useSelector((state) => state.rockets.rockets);
 
   // Check if the missionsArr has data
   if (!missionsArr.data || missionsArr.data.length === 0) {
@@ -10,6 +12,11 @@ const Profile = () => {
   }
 
   const reservedMissions = missionsArr.data.filter((mission) => mission.reserved === true);
+
+  const reservedRocketNames = reservedRockets.map((rocketId) => {
+    const rocket = rockets.find((rocket) => rocket.id === rocketId);
+    return rocket ? rocket.name : '';
+  });
 
   return (
     <section className="profile">
@@ -28,16 +35,16 @@ const Profile = () => {
         </ul>
       </div>
       <div className="active-missions">
-        <h2>My Missions</h2>
+        <h2>My Rockets</h2>
         <ul>
-          {reservedMissions.length > 0 ? (
-            reservedMissions.map((mission) => (
-              <li className="active-mission" key={mission.mission_id}>
-                {mission.mission_name}
+          {reservedRocketNames.length > 0 ? (
+            reservedRocketNames.map((rocketName) => (
+              <li className="active-mission" key={rocketName}>
+                {rocketName}
               </li>
             ))
           ) : (
-            <div>No reserved missions found.</div>
+            <div>No reserved rockets found.</div>
           )}
         </ul>
       </div>
