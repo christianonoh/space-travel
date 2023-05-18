@@ -21,7 +21,9 @@ describe('Missions component', () => {
   beforeEach(() => {
     mockMissionsSelector = jest.fn();
     mockDispatch = jest.fn();
-    useSelector.mockImplementation((selectorFn) => selectorFn({ missions: mockMissionsSelector() }));
+    useSelector.mockImplementation((selectorFn) => selectorFn(
+      { missions: mockMissionsSelector() },
+    ));
     useDispatch.mockReturnValue(mockDispatch);
   });
 

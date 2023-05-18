@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // Import the jest-dom library
 import RocketCard from '../../components/RocketCard';
+
 describe('RocketCard', () => {
   const mockProps = {
     name: 'Falcon 9',
@@ -9,6 +10,7 @@ describe('RocketCard', () => {
     imageUrl: 'https://example.com/falcon9.jpg',
   };
   test('renders rocket card with correct props', () => {
+    // eslint-disable-next-line react/jsx-props-no-spreading
     render(<RocketCard {...mockProps} />);
     expect(screen.getByText(mockProps.name)).toBeInTheDocument();
     expect(screen.getByText(mockProps.description)).toBeInTheDocument();
@@ -16,6 +18,7 @@ describe('RocketCard', () => {
     expect(screen.getByRole('button', { name: /reserve rocket/i })).toBeInTheDocument();
   });
   test('renders rocket card without crashing', () => {
+    // eslint-disable-next-line react/jsx-props-no-spreading
     render(<RocketCard {...mockProps} />);
     // Additional test to check if the component renders without throwing an error
   });

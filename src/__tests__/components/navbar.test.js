@@ -9,7 +9,7 @@ describe('Navbar component', () => {
     render(
       <MemoryRouter>
         <Navbar />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     const links = [
