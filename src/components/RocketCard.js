@@ -15,6 +15,7 @@ function RocketCard({
       </div>
       <div className="rocket-details">
         <h1>{name}</h1>
+        {reserved ? <p className="reserved-tag">Reserved</p> : null}
         <p>{description}</p>
         <button type="button" onClick={handleReserveRocket}>
           {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
