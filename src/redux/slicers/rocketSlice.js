@@ -29,8 +29,13 @@ const rocketSlice = createSlice({
     toggleReserveRocket: (state, action) => {
       const rocketID = action.payload;
       const updatedRockets = state.rockets.map((rocket) => {
-        if (rocket.id !== rocketID) return rocket;
-        return { ...rocket, reserved: !rocket.reserved };
+        if (rocket.id === rocketID) {
+          return {
+            ...rocket,
+            reserved: !rocket.reserved,
+          };
+        }
+        return rocket;
       });
       const updatedReservedRockets = updatedRockets
         .filter((rocket) => rocket.reserved)

@@ -29,7 +29,7 @@ RocketCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
-  rocketID: PropTypes.number.isRequired,
+  rocketID: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
   onToggleReserve: PropTypes.func.isRequired,
 };

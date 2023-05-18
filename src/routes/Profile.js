@@ -12,9 +12,11 @@ const Profile = () => {
   }
 
   const reservedMissions = missionsArr.data.filter((mission) => mission.reserved === true);
-  const reservedRocketNames = rockets
-    .filter((rocket) => reservedRockets.includes(rocket.id))
-    .map((rocket) => rocket.name);
+
+  const reservedRocketNames = reservedRockets.map((rocketId) => {
+    const rocket = rockets.find((rocket) => rocket.id === rocketId);
+    return rocket ? rocket.name : '';
+  });
 
   return (
     <section className="profile">
