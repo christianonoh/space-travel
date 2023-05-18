@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRockets, toggleReserveRocket } from '../redux/slicers/rocketSlice';
+import { fetchRockets, toggleReserveRocket } from '../redux/rockets/rocketSlice';
 import RocketCard from '../components/RocketCard';
 
 const RocketsPage = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.rockets);
+  const status = useSelector((state) => state.rockets.status);
   const reservedRockets = useSelector((state) => state.rockets.reservedRockets);
 
   useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
+    if (status !== 'idle') {
+      dispatch(fetchRockets());
+    }
+  }, [status, dispatch]);
 
   const handleToggleReserve = (rocketID) => {
     dispatch(toggleReserveRocket(rocketID));
