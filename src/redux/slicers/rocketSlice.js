@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchRocketData = createAsyncThunk('missions/fetchData', async () => {
+export const fetchRockets = createAsyncThunk('rockets/fetchData', async () => {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: 'https://api.spacexdata.com/v3/missions/',
+    url: 'https://api.spacexdata.com/v4/rockets',
     headers: {},
   };
   const response = await axios.request(config);
@@ -16,34 +16,42 @@ export const fetchRocketData = createAsyncThunk('missions/fetchData', async () =
 });
 
 const initialState = {
-  data: [],
-  status: 'idle',
+  rockets: [],
+  reservedRockets: [],
+  loading: false,
   error: null,
 };
 
-const rocketReducer = createSlice({
+const rocketSlice = createSlice({
   name: 'rocket',
   initialState,
   reducers: {
-    toggleRocketReserved: (state, action) => {
-      const rocketId = action.payload;
-      const newData = state.data.map((rocket) => {
-        if (rocket.id !== rocketId) return rocket;
+    toggleReserveRocket: (state, action) => {
+      const rocketID = action.payload;
+      const updatedRockets = state.rockets.map((rocket) => {
+        if (rocket.id !== rocketID) return rocket;
         return { ...rocket, reserved: !rocket.reserved };
       });
-      return { ...state, data: newData };
+      const updatedReservedRockets = updatedRockets
+        .filter((rocket) => rocket.reserved)
+        .map((rocket) => rocket.id);
+      return {
+        ...state,
+        rockets: updatedRockets,
+        reservedRockets: updatedReservedRockets,
+      };
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchRocketData.fulfilled, (state, action) => {
-      const dataWithReserved = action.payload.map((mission) => ({
-        ...mission,
+    builder.addCase(fetchRockets.fulfilled, (state, action) => {
+      const rocketsWithReserved = action.payload.map((rocket) => ({
+        ...rocket,
         reserved: false,
       }));
-      return { ...state, data: dataWithReserved, status: 'fulfilled' };
+      return { ...state, rockets: rocketsWithReserved, status: 'fulfilled' };
     });
   },
 });
 
-export const { toggleRocketReserved } = rocketReducer.actions;
-export default rocketReducer.reducer;
+export const { toggleReserveRocket } = rocketSlice.actions;
+export default rocketSlice.reducer;
