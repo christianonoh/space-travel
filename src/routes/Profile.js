@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const Profile = () => {
   const missionsArr = useSelector((store) => store.missions);
-  const reservedRockets = useSelector((store) => store.rocketsReserved);
+  const reservedRockets = useSelector((state) => state.rockets.reservedRockets);
 
   // Check if the missionsArr has data
   if (!missionsArr.data || missionsArr.data.length === 0) {
