@@ -16,7 +16,7 @@ describe('RocketCard', () => {
         name={mockProps.name}
         description={mockProps.description}
         imageUrl={mockProps.imageUrl}
-      />
+      />,
     );
 
     expect(screen.getByText(mockProps.name)).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe('RocketCard', () => {
         name={mockProps.name}
         description={mockProps.description}
         imageUrl={mockProps.imageUrl}
-      />
+      />,
     );
   });
 });
