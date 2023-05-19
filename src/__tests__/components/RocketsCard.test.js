@@ -9,17 +9,28 @@ describe('RocketCard', () => {
     description: 'A two-stage rocket designed and manufactured by SpaceX.',
     imageUrl: 'https://example.com/falcon9.jpg',
   };
+
   test('renders rocket card with correct props', () => {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    render(<RocketCard {...mockProps} />);
+    render(
+      <RocketCard
+        name={mockProps.name}
+        description={mockProps.description}
+        imageUrl={mockProps.imageUrl}
+      />,
+    );
+
     expect(screen.getByText(mockProps.name)).toBeInTheDocument();
     expect(screen.getByText(mockProps.description)).toBeInTheDocument();
     expect(screen.getByAltText(mockProps.name)).toHaveAttribute('src', mockProps.imageUrl);
     expect(screen.getByRole('button', { name: /reserve rocket/i })).toBeInTheDocument();
   });
   test('renders rocket card without crashing', () => {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    render(<RocketCard {...mockProps} />);
-    // Additional test to check if the component renders without throwing an error
+    render(
+      <RocketCard
+        name={mockProps.name}
+        description={mockProps.description}
+        imageUrl={mockProps.imageUrl}
+      />,
+    );
   });
 });
