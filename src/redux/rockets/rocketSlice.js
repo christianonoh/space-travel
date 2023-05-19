@@ -18,6 +18,7 @@ export const fetchRockets = createAsyncThunk('rockets/fetchData', async () => {
 const initialState = {
   rockets: [],
   reservedRockets: [],
+  status: 'idle',
   loading: false,
   error: null,
 };

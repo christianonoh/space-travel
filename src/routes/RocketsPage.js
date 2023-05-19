@@ -10,7 +10,7 @@ const RocketsPage = () => {
   const reservedRockets = useSelector((state) => state.rockets.reservedRockets);
 
   useEffect(() => {
-    if (status !== 'idle') {
+    if (status === 'idle') {
       dispatch(fetchRockets());
     }
   }, [status, dispatch]);
