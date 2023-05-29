@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Layout from './components/Layout';
 import Missions from './routes/MissionsPage';
 import Profile from './routes/Profile';
