@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 /* 
 font-family: 'Cormorant Garamond', serif;
 font-family: 'Nunito Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
 */
+
+$pink-color: #840078;
+$purper-color: #1b1464;
+$gray-color: #7d849b;
+
 * {
   margin: 0;
   padding: 0;
@@ -34,40 +42,110 @@ nav {
   border-bottom: 1px solid var(--Grey);
   background-color: var(--White);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .active {
+    background-color: #1974b3;
+    color: #fff !important;
+  }
+
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+    a {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      color: #1974b3;
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    a:hover {
+      background-color: #12679b;
+      color: #fff;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #logo { height: calc(5vmin + 1rem); }
 }
 
-nav .active {
-  background-color: #1974b3;
-  color: #fff !important;
-}
-
-.nav-items {
+main {
+  position: relative;
+  height: 100vh;
+  background-color: white;
+  padding: 0 5vw;
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+
+  #baseBg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #p1 {
+    position: absolute;
+    bottom: 35vh;
+    left: 50vw;
+    height: 10%;
+  }
+
+  #p2pink {
+    position: absolute;
+    bottom: 12vh;
+    right: 20vw;
+    height: 20%;
+  }
+
+  .main-hero-container {
+    width: 40%;
+
+    * {
+      margin: 2vh 0;
+    }
+
+    .hero-text {
+      h1 {
+        font-family: 'Oswald', sans-serif;
+        line-height: 7vh;
+        font-size: 6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $pink-color;
+      }
+
+      .purple-text {
+        color: $purper-color;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $gray-color;
+      }
+      
+    }
+  }
 }
 
-.nav-item a {
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  color: #1974b3;
-  border-radius: 4px;
-  padding: 8px 10px;
-}
 
-.nav-item a:hover {
-  background-color: #12679b;
-  color: #fff;
-}
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-#logo { height: calc(5vmin + 1rem); }
+
+
+
+
 
 /* ========================================================
  MISSIONS
