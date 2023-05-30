@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
-/* 
+
+/*
 font-family: 'Cormorant Garamond', serif;
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Montserrat', sans-serif;
@@ -86,8 +87,114 @@ nav .active {
 }
 
 .joinBtn {
-  color: #6c757d;
-  border: 1px solid #6c757d;
+  // color: #098d03;
+  // border: 1px solid #098d03;
+  color: $purper-color;
+  border: 1px solid $purper-color;
+}
+
+.landing-page {
+  background: rgb(4, 7, 74);
+  background: linear-gradient(90deg, rgba(4, 7, 74, 1) 0%, rgba(42, 36, 109, 1) 35%, rgba(42, 36, 109, 1) 100%);
+  position: relative;
+
+  #whitebg {
+    // display: block;
+    position: relative;
+    z-index: 1;
+    height: unset;
+  }
+
+  #planet1 {
+    position: absolute;
+    // border: 1px solid white;
+    top: 10vw;
+    right: 15vw;
+    width: 10vw;
+  }
+
+  #planet2 {
+    position: absolute;
+    // border: 1px solid pink;
+    top: 30vw;
+    right: 10vw;
+    width: 10vw;
+    z-index: 1;
+  }
+
+  #planet5 {
+    position: absolute;
+    // border: 1px solid aquamarine;
+    top: 4vw;
+    right: 35vw;
+    width: 25vw;
+    z-index: 0;
+  }
+
+  #planet3 {
+    position: absolute;
+    // border: 1px solid red;
+    right: 5vw;
+    width: 4vw;
+    top: 8vw;
+  }
+
+  #planet4 {
+    position: absolute;
+    // border: 1px solid blue;
+    top: 5vw;
+    right: 25vw;
+    width: 6vw;
+  }
+
+  #astronaut {
+    position: absolute;
+    // border: 1px solid red;
+    top: 15vw;
+    right: 20vw;
+    width: 25vw;
+    z-index: 1;
+    // display: none;
+  }
+
+  .mission-intro {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    margin-left: 5vw;
+    width: 40%;
+
+    h2 {
+      color: $pink-color;
+      font-family: 'Oswald', sans-serif;
+      font-size: calc(2rem + 1vw);
+      margin-bottom: 1rem;
+
+      span {
+        color: $purper-color;
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      color: $gray-color;
+    }
+  }
+}
+
+.landing-page::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+
+.table-container {
+  overflow-x: auto;
 }
 
 /* ========================================================
@@ -160,7 +267,7 @@ nav .active {
   margin: 2rem auto;
   font-size: 1.4rem;
 }
-
+/* stylelint-disable-next-line no-descending-specificity */
 .profile h2 { font-size: 2.2rem; }
 
 .active-missions ul :first-child {
