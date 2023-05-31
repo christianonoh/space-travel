@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets, toggleReserveRocket } from '../redux/rockets/rocketSlice';
 import RocketCard from '../components/RocketCard';
-import baseBg from '../assets/baseBg.svg';
+import starBg from '../assets/starBg.svg';
 import p1 from '../assets/p1.png';
 import p2pink from '../assets/pp1.png';
+import saturn from '../assets/saturn.png';
+import rocket from '../assets/rocket.png';
 
 const RocketsPage = () => {
   const dispatch = useDispatch();
@@ -25,9 +27,11 @@ const RocketsPage = () => {
   return (
     <>
       <main>
-        <img src={baseBg} alt="Background" id="baseBg" />
+        <img src={starBg} alt="Background" id="baseBg" />
         <img src={p1} alt="Background" id="p1" />
         <img src={p2pink} alt="Background" id="p2pink" />
+        <img src={saturn} alt="Background" id="saturn" />
+        <img src={rocket} alt="Background" id="rocket-homepage" />
         <div className="main-hero-container">
           <div className="hero-text">
             <h1> Space </h1>
@@ -42,7 +46,7 @@ const RocketsPage = () => {
           </div>
         </div>
       </main>
-      <div>
+      <div className="main-rocket-container">
         {rockets.map((rocket) => (
           <RocketCard
             key={rocket.id}
