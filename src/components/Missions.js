@@ -41,7 +41,7 @@ const Missions = () => {
     <section>
       <div className="landing-page">
         <img src={whitebg} id="whitebg" alt="bg" />
-        <img src={planet1} id="planet1" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet1" />
+        <img src={planet1} id="planet1" style={{ transform: `translateY(${scrollValue * 0.6}px)` }} alt="planet1" />
         <img src={planet2} id="planet2" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet2" />
         <img src={planet3} id="planet3" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet3" />
         <img src={planet4} id="planet4" style={{ transform: `translateY(${scrollValue}px)` }} alt="planet4" />

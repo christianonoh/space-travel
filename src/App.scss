@@ -193,6 +193,7 @@ nav .active {
 
 .table-container {
   overflow-x: auto;
+  padding: 0 20px;
 }
 
 /* ========================================================
@@ -287,6 +288,57 @@ nav .active {
       top: 20%;
       margin-left: 5vw;
       width: 40%;
+
+      h2 {
+        color: $pink-color;
+        font-family: 'Oswald', sans-serif;
+        font-size: calc(2rem + 3vw);
+        margin-bottom: 1rem;
+
+        span {
+          color: $purper-color;
+          text-transform: uppercase;
+        }
+      }
+
+      p {
+        color: $gray-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing-page {
+    height: 80vh;
+    // background: white;
+    #whitebg {
+      height: 100%;
+    }
+    #planet1,
+    #planet2,
+    #planet3,
+    #planet4,
+    #planet5,
+    #whitebg {
+      // display: none;
+    }
+    #astronaut {
+      position: absolute;
+      // border: 1px solid red;
+      top: 15vw;
+      right: 40vw;
+      width: 35vw;
+      z-index: 1;
+      // display: none;
+    }
+  
+    .mission-intro {
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      margin-left: 5vw;
+      width: 80%;
 
       h2 {
         color: $pink-color;
