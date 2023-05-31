@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../styles/missions.module.scss';
 import Button from './Button';
 import { fetchData, toggleMissionReserved } from '../redux/missions/missionsSlice';
@@ -14,6 +15,18 @@ import astronaut from '../assets/astronaut.png';
 const Missions = () => {
   const missions = useSelector((store) => store.missions);
   const dispatch = useDispatch();
+  const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const value = window.scrollY;
+      setScrollValue(value);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (missions.status === 'idle') {
@@ -28,13 +41,23 @@ const Missions = () => {
     <section>
       <div className="landing-page">
         <img src={whitebg} id="whitebg" alt="bg" />
-        <img src={planet1} id="planet1" alt="planet1" />
-        <img src={planet2} id="planet2" alt="planet2" />
-        <img src={planet3} id="planet3" alt="planet3" />
-        <img src={planet4} id="planet4" alt="planet4" />
-        <img src={planet5} id="planet5" alt="planet5" />
-        <img src={astronaut} id="astronaut" alt="astronaut" />
-        <div className="mission-intro">
+        <img src={planet1} id="planet1" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet1" />
+        <img src={planet2} id="planet2" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet2" />
+        <img src={planet3} id="planet3" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet3" />
+        <img src={planet4} id="planet4" style={{ transform: `translateY(${scrollValue}px)` }} alt="planet4" />
+        <img src={planet5} id="planet5" style={{ transform: `translateY(${scrollValue * 0.15}px)` }} alt="planet5" />
+
+        <img
+          src={astronaut}
+          className={styles.astronaut}
+          style={{ transform: `translateY(${scrollValue * 0.4}px)` }}
+          id="astronaut"
+          alt="astronaut"
+        />
+        <div
+          className="mission-intro"
+          style={{ transform: `translateY(${scrollValue * 0.4}px)` }}
+        >
           <h2>
             Space Missions
             <br />
