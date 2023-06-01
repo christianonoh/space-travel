@@ -105,7 +105,7 @@ nav .active {
 
   #planet1 {
     position: absolute;
-    border: 1px solid white;
+    // border: 1px solid white;
     top: 10vw;
     right: 15vw;
     width: 10vw;
@@ -113,7 +113,7 @@ nav .active {
 
   #planet2 {
     position: absolute;
-    border: 1px solid pink;
+    // border: 1px solid pink;
     top: 30vw;
     right: 10vw;
     width: 10vw;
@@ -122,7 +122,7 @@ nav .active {
 
   #planet5 {
     position: absolute;
-    border: 1px solid aquamarine;
+    // border: 1px solid aquamarine;
     top: 4vw;
     right: 35vw;
     width: 25vw;
@@ -131,7 +131,7 @@ nav .active {
 
   #planet3 {
     position: absolute;
-    border: 1px solid red;
+    // border: 1px solid red;
     right: 5vw;
     width: 4vw;
     top: 8vw;
@@ -139,7 +139,7 @@ nav .active {
 
   #planet4 {
     position: absolute;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     top: 5vw;
     right: 25vw;
     width: 6vw;
@@ -152,7 +152,6 @@ nav .active {
     right: 20vw;
     width: 25vw;
     z-index: 1;
-    // display: none;
   }
 
   .mission-intro {
@@ -174,9 +173,7 @@ nav .active {
       }
     }
 
-    p {
-      color: $gray-color;
-    }
+    p { color: $gray-color; }
   }
 }
 
@@ -186,9 +183,10 @@ nav .active {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   height: 50px;
-  background-color: white;
+  background: linear-gradient(to top, white, transparent);
 }
 
 .table-container {
@@ -293,7 +291,7 @@ nav .active {
         color: $pink-color;
         font-family: 'Oswald', sans-serif;
         font-size: calc(2rem + 3vw);
-        margin-bottom: 1rem;
+        margin-bottom: 1vw;
 
         span {
           color: $purper-color;
@@ -308,13 +306,14 @@ nav .active {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .landing-page {
     height: 80vh;
     // background: white;
     #whitebg {
       height: 100%;
     }
+
     #planet1,
     #planet2,
     #planet3,
@@ -323,6 +322,7 @@ nav .active {
     #whitebg {
       // display: none;
     }
+
     #astronaut {
       position: absolute;
       // border: 1px solid red;
@@ -332,7 +332,7 @@ nav .active {
       z-index: 1;
       // display: none;
     }
-  
+
     .mission-intro {
       position: absolute;
       top: 50%;
@@ -356,5 +356,20 @@ nav .active {
         color: $gray-color;
       }
     }
+  }
+
+  .landing-page::after {
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+
+  td {
+    font-size: 1.2rem;
   }
 }

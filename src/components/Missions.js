@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import styles from '../styles/missions.module.scss';
@@ -45,12 +44,14 @@ const Missions = () => {
         <img src={planet2} id="planet2" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet2" />
         <img src={planet3} id="planet3" style={{ transform: `translateY(${scrollValue * 0.5}px)` }} alt="planet3" />
         <img src={planet4} id="planet4" style={{ transform: `translateY(${scrollValue}px)` }} alt="planet4" />
-        <img src={planet5} id="planet5" style={{ transform: `translateY(${scrollValue * 0.15}px)` }} alt="planet5" />
-
+        <img src={planet5} id="planet5" style={{ transform: `translateY(${scrollValue * 0.25}px)` }} alt="planet5" />
         <img
           src={astronaut}
           className={styles.astronaut}
-          style={{ transform: `translateY(${scrollValue * 0.4}px)` }}
+          style={{
+            transform: `translateY(${scrollValue * 0.4}px) rotate(${scrollValue / 8}deg)`,
+            transformOrigin: 'left bottom',
+          }}
           id="astronaut"
           alt="astronaut"
         />
