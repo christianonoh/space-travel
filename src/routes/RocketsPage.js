@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets, toggleReserveRocket } from '../redux/rockets/rocketSlice';
 import RocketCard from '../components/RocketCard';
@@ -13,6 +13,33 @@ const RocketsPage = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const status = useSelector((state) => state.rockets.status);
   const reservedRockets = useSelector((state) => state.rockets.reservedRockets);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [initialPositions, setInitialPositions] = useState({});
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Calculate and store the initial positions of the elements
+    const p1Element = document.getElementById('p1');
+    const p2pinkElement = document.getElementById('p2pink');
+    const saturnElement = document.getElementById('saturn');
+    const rocketElement = document.getElementById('rocket-homepage');
+
+    setInitialPositions({
+      p1: p1Element.offsetTop,
+      p2pink: p2pinkElement.offsetTop,
+      saturn: saturnElement.offsetTop,
+      rocket: rocketElement.offsetTop,
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -28,10 +55,40 @@ const RocketsPage = () => {
     <>
       <main>
         <img src={starBg} alt="Background" id="baseBg" />
-        <img src={p1} alt="Background" id="p1" />
-        <img src={p2pink} alt="Background" id="p2pink" />
-        <img src={saturn} alt="Background" id="saturn" />
-        <img src={rocket} alt="Background" id="rocket-homepage" />
+        <img
+          src={p1}
+          alt="Background"
+          id="p1"
+          style={{
+            top: `${initialPositions.p1 + scrollPosition * 0.2}px`,
+          }}
+        />
+        <img
+          src={p2pink}
+          alt="Background"
+          id="p2pink"
+          style={{
+            top: `${initialPositions.p2pink + scrollPosition * -0.2}px`,
+          }}
+        />
+        <img
+          src={saturn}
+          alt="Background"
+          id="saturn"
+          style={{
+            top: `${initialPositions.saturn + scrollPosition * 0.4}px`,
+          }}
+        />
+        <img
+          src={rocket}
+          alt="Background"
+          id="rocket-homepage"
+          style={{
+            top: `${initialPositions.rocket + scrollPosition * -0.5}px`,
+            transform: `rotate(${-scrollPosition / 8}deg)`,
+            transformOrigin: 'left bottom',
+          }}
+        />
         <div className="main-hero-container">
           <div className="hero-text">
             <h1> Space </h1>
@@ -46,6 +103,9 @@ const RocketsPage = () => {
           </div>
         </div>
       </main>
+      <div className="available-rockets">
+        <h2>Available Rockets</h2>
+      </div>
       <div className="main-rocket-container">
         {rockets.map((rocket) => (
           <RocketCard

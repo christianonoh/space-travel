@@ -98,7 +98,7 @@ main {
   #p1 {
     position: absolute;
     bottom: 35vh;
-    left: 50vw;
+    left: 60vw;
     height: 10%;
   }
 
@@ -112,7 +112,7 @@ main {
   #saturn {
     position: absolute;
     top: 0;
-    right: 10vw;
+    right: 0;
     height: 25%;
   }
 
@@ -155,6 +155,15 @@ main {
   }
 }
 
+.available-rockets {
+  width: 90%;
+  margin: 0  auto;
+  color: $pink-color;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
 /* ========================================================
  MISSIONS
  ========================================================  */
@@ -173,7 +182,6 @@ main {
  ========================================================  */
 
 .main-rocket-container {
-  padding: 15vh 0;
 
   .rocket-card {
     display: flex;
