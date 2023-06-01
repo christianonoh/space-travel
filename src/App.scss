@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
-/* 
+
+/*
 font-family: 'Cormorant Garamond', serif;
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Montserrat', sans-serif;
@@ -10,7 +11,7 @@ font-family: 'Oswald', sans-serif;
 $pink-color: #840078;
 $purper-color: #1b1464;
 $gray-color: #7d849b;
-$lightPink-color: #DF3C85;
+$lightPink-color: #df3c85;
 
 * {
   margin: 0;
@@ -53,7 +54,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 20px;
-  
+
     a {
       text-transform: uppercase;
       font-size: 1.3rem;
@@ -76,6 +77,78 @@ nav {
     gap: 0.5rem;
   }
   #logo { height: calc(5vmin + 1rem); }
+}
+
+.main-rocket-container {
+  .rocket-card {
+    display: flex;
+    width: 90%;
+    border-radius: 5px;
+    padding: 1vw 2vw;
+    margin: 3vh auto;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid $gray-color;
+
+    .rocket-image {
+      width: 15vw;
+      height: 15vw;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+    }
+  }
+
+  .rocket-details {
+    display: flex;
+    justify-content: center;
+    padding: 0 2.5vw;
+    flex-direction: column;
+
+    h1 {
+      color: $purper-color;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $gray-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    button {
+      width: 20%;
+      height: 2.5vw;
+      min-width: 150px;
+      min-height: 30px;
+      background-color: $purper-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.5s;
+    }
+
+    button:hover {
+      background-color: $lightPink-color;
+    }
+
+    .reserved-tag {
+      background-color: $pink-color;
+      color: white;
+      padding: 1.2vh 1vw;
+      min-width: 100px;
+      width: 10%;
+      line-height: 0.3rem;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
+}
+
+.rocket-details * {
+  margin: 0.5vw 0;
 }
 
 main {
@@ -150,7 +223,6 @@ main {
         font-weight: 400;
         color: $gray-color;
       }
-      
     }
   }
 }
@@ -180,80 +252,6 @@ main {
 /* ========================================================
  ROCKETS
  ========================================================  */
-
-.main-rocket-container {
-
-  .rocket-card {
-    display: flex;
-    width: 90%;
-    border-radius: 5px;
-    padding: 1vw 2vw;
-    margin: 3vh auto;
-    background-color: rgb(243, 243, 243);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border: 1px solid $gray-color;
-  
-    .rocket-image {
-      width: 15vw;
-      height: 15vw;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 5px;
-    }
-  }
-
-  .rocket-details {
-    display: flex;
-    justify-content: center;
-    padding: 0 2.5vw;
-    flex-direction: column;
-
-    h1 {
-      color: $purper-color;
-      font-family: 'Oswald', sans-serif;
-      text-transform: uppercase;
-    }
-
-    p {
-      color: $gray-color;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.5rem;
-    }
-
-    * {
-      margin: 0.5vw 0;
-    }
-
-    button {
-      width: 20%;
-      height: 2.5vw;
-      min-width: 150px;
-      min-height: 30px;
-      background-color: $purper-color;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 1.5rem;
-      transition: all 0.5s;
-    }
-
-    button:hover {
-      background-color: $lightPink-color;
-    }
-
-    .reserved-tag {
-      background-color: $pink-color;
-      color: white;
-      padding: 1.2vh 1vw;
-      min-width: 100px;
-      width: 10%;
-      line-height: 0.3rem;
-      border-radius: 5px;
-      text-align: center;
-    }
-  }
-  
-}
 
 
 
