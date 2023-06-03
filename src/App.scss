@@ -258,6 +258,10 @@ main {
   background-color: $purper-color;
   overflow: hidden;
   height: 95vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
 
   #whitebg {
     position: absolute;
@@ -315,18 +319,30 @@ main {
   .mission-intro {
     z-index: 1;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    h2 {
-      color: $pink-color;
+    h1 {
       font-family: 'Oswald', sans-serif;
+      line-height: 7vh;
       font-size: 8rem;
+      font-weight: 800;
       text-transform: uppercase;
+      color: $pink-color;
+      margin: 25px 0;
     }
 
-    p { 
-      color: $gray-color; 
-      font-size: 1.7rem;
+    .purple-text {
+      color: $purper-color;
+      font-size: 6.5rem;
+    }
+
+    p {
       font-family: 'Montserrat', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: $gray-color;
     }
   }
 }
