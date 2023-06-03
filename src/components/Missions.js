@@ -37,7 +37,7 @@ const Missions = () => {
     dispatch(toggleMissionReserved(id));
   };
   return (
-    <section>
+    <>
       <div className="landing-page">
         <img src={whitebg} id="whitebg" alt="bg" />
         <img src={planet1} id="planet1" style={{ transform: `translateY(${scrollValue * 0.6}px)` }} alt="planet1" />
@@ -104,7 +104,7 @@ const Missions = () => {
           </tbody>
         </table>
       </div>
-    </section>
+    </>
   );
 };
 
