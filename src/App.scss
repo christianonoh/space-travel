@@ -11,6 +11,7 @@ font-family: 'Oswald', sans-serif;
 $pink-color: #840078;
 $purper-color: #1b1464;
 $gray-color: #7d849b;
+$lightPink-color: #df3c85;
 
 * {
   margin: 0;
@@ -43,40 +44,197 @@ nav {
   border-bottom: 1px solid var(--Grey);
   background-color: var(--White);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .active {
+    background-color: #1974b3;
+    color: #fff !important;
+  }
+
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      color: #1974b3;
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    a:hover {
+      background-color: #12679b;
+      color: #fff;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #logo { height: calc(5vmin + 1rem); }
 }
 
-nav .active {
-  background-color: #1974b3;
-  color: #fff !important;
+.main-rocket-container {
+  .rocket-card {
+    display: flex;
+    width: 90%;
+    border-radius: 5px;
+    padding: 1vw 2vw;
+    margin: 3vh auto;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid $gray-color;
+
+    .rocket-image {
+      width: 15vw;
+      height: 15vw;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+    }
+  }
+
+  .rocket-details {
+    display: flex;
+    justify-content: center;
+    padding: 0 2.5vw;
+    flex-direction: column;
+
+    h1 {
+      color: $purper-color;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $gray-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    button {
+      width: 20%;
+      height: 2.5vw;
+      min-width: 150px;
+      min-height: 30px;
+      background-color: $purper-color;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.5s;
+    }
+
+    button:hover {
+      background-color: $lightPink-color;
+    }
+
+    .reserved-tag {
+      background-color: $pink-color;
+      color: white;
+      padding: 1.2vh 1vw;
+      min-width: 100px;
+      width: 10%;
+      line-height: 0.3rem;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
 }
 
-.nav-items {
+.rocket-details * {
+  margin: 0.5vw 0;
+}
+
+main {
+  position: relative;
+  height: 95vh;
+  background-color: white;
+  padding: 0 5vw;
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+
+  #baseBg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #p1 {
+    position: absolute;
+    bottom: 35vh;
+    left: 60vw;
+    height: 10%;
+  }
+
+  #p2pink {
+    position: absolute;
+    bottom: 12vh;
+    right: 20vw;
+    height: 18%;
+  }
+
+  #saturn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25%;
+  }
+
+  #rocket-homepage {
+    position: absolute;
+    top: 40vh;
+    right: -5vh;
+    height: 60%;
+  }
+
+  .main-hero-container {
+    width: 40%;
+
+    * {
+      margin: 2vh 0;
+    }
+
+    .hero-text {
+      h1 {
+        font-family: 'Oswald', sans-serif;
+        line-height: 7vh;
+        font-size: 6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $pink-color;
+      }
+
+      .purple-text {
+        color: $purper-color;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $gray-color;
+      }
+    }
+  }
 }
 
-.nav-item a {
+.available-rockets {
+  width: 90%;
+  margin: 0  auto;
+  color: $pink-color;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  color: #1974b3;
-  border-radius: 4px;
-  padding: 8px 10px;
 }
-
-.nav-item a:hover {
-  background-color: #12679b;
-  color: #fff;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-#logo { height: calc(5vmin + 1rem); }
 
 /* ========================================================
  MISSIONS
@@ -192,64 +350,6 @@ nav .active {
 .table-container {
   overflow-x: auto;
   padding: 0 20px;
-}
-
-/* ========================================================
- ROCKETS
- ========================================================  */
-.rocket-card {
-  display: flex;
-  width: 90%;
-  border-radius: 5px;
-  padding: 1vw 2vw;
-  margin: 10px auto;
-  background-color: rgb(243, 243, 243);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.rocket-image {
-  width: 15vw;
-  height: 15vw;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 5px;
-}
-
-.rocket-details {
-  display: flex;
-  justify-content: center;
-  padding: 0 2.5vw;
-  flex-direction: column;
-}
-
-.rocket-details > * {
-  margin: 0.5vw 0;
-}
-
-.rocket-details button {
-  width: 20%;
-  height: 2.5vw;
-  min-width: 150px;
-  min-height: 30px;
-  background-color: #8ecae6;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.rocket-details button:hover {
-  background-color: #688490;
-}
-
-.reserved-tag {
-  background-color: rgb(203, 35, 35);
-  color: white;
-  padding: 1vh;
-  width: 10%;
-  line-height: 0.3rem;
-  border-radius: 5px;
-  text-align: center;
 }
 
 /* ========================================================
