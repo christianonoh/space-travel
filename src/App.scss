@@ -261,12 +261,13 @@ main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0 5vw;
   
-
   #whitebg {
     position: absolute;
     z-index: 1;
     top: 0;
+    left: 0;
     width: 100%;
     object-fit: contain;
   }
@@ -317,8 +318,8 @@ main {
   }
 
   .mission-intro {
-    z-index: 1;
     width: 40%;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -326,7 +327,7 @@ main {
     h1 {
       font-family: 'Oswald', sans-serif;
       line-height: 7vh;
-      font-size: 8rem;
+      font-size: 6rem;
       font-weight: 800;
       text-transform: uppercase;
       color: $pink-color;
@@ -335,7 +336,6 @@ main {
 
     .purple-text {
       color: $purper-color;
-      font-size: 6.5rem;
     }
 
     p {
@@ -391,33 +391,6 @@ main {
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
   padding: 2vmin;
-}
-
-@media screen and (min-width: 768px) {
-  .landing-page {
-    .mission-intro {
-      position: absolute;
-      top: 20%;
-      margin-left: 5vw;
-      width: 40%;
-
-      h2 {
-        color: $pink-color;
-        font-family: 'Oswald', sans-serif;
-        font-size: calc(2rem + 3vw);
-        margin-bottom: 1vw;
-
-        span {
-          color: $purper-color;
-          text-transform: uppercase;
-        }
-      }
-
-      p {
-        color: $gray-color;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 767px) {
