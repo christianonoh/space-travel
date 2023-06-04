@@ -37,7 +37,7 @@ const Missions = () => {
     dispatch(toggleMissionReserved(id));
   };
   return (
-    <section>
+    <>
       <div className="landing-page">
         <img src={whitebg} id="whitebg" alt="bg" />
         <img src={planet1} id="planet1" style={{ transform: `translateY(${scrollValue * 0.6}px)` }} alt="planet1" />
@@ -55,19 +55,17 @@ const Missions = () => {
           id="astronaut"
           alt="astronaut"
         />
-        <div
-          className="mission-intro"
-          style={{ transform: `translateY(${scrollValue * 0.4}px)` }}
-        >
-          <h2>
-            Space Missions
-            <br />
-            <span>Discover and Join!</span>
-          </h2>
-          <p>
-            Embark on extraordinary journeys, uncovering the wonders of the cosmos.
-            Engage with exciting missions and join the quest for knowledge and exploration.
-          </p>
+        <div className="mission-intro">
+          <div className="hero-text">
+            <h1> Space Missions </h1>
+            <h1 className="purple-text"> Discover and Join! </h1>
+          </div>
+          <div className="hero-text">
+            <p>
+              Embark on extraordinary journeys, uncovering the wonders of the cosmos.
+              Engage with exciting missions and join the quest for knowledge and exploration.
+            </p>
+          </div>
         </div>
       </div>
       <div className="table-container">
@@ -104,7 +102,7 @@ const Missions = () => {
           </tbody>
         </table>
       </div>
-    </section>
+    </>
   );
 };
 
