@@ -155,6 +155,100 @@ nav {
   margin: 0.5vw 0;
 }
 
+.landing-page {
+  position: relative;
+  background-color: $purper-color;
+  overflow: hidden;
+  height: 95vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 5vw;
+
+  #whitebg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  #planet1 {
+    position: absolute;
+    top: 10vw;
+    right: 15vw;
+    width: 10vw;
+  }
+
+  #planet2 {
+    position: absolute;
+    top: 30vw;
+    right: 10vw;
+    width: 10vw;
+    z-index: 1;
+  }
+
+  #planet5 {
+    position: absolute;
+    top: 4vw;
+    right: 35vw;
+    width: 25vw;
+    z-index: 0;
+  }
+
+  #planet3 {
+    position: absolute;
+    right: 5vw;
+    width: 4vw;
+    top: 8vw;
+  }
+
+  #planet4 {
+    position: absolute;
+    top: 5vw;
+    right: 25vw;
+    width: 6vw;
+  }
+
+  #astronaut {
+    position: absolute;
+    top: 15vw;
+    right: 20vw;
+    width: 25vw;
+    z-index: 1;
+  }
+
+  .mission-intro {
+    width: 40%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-family: 'Oswald', sans-serif;
+      line-height: 7vh;
+      font-size: 6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $pink-color;
+      margin: 25px 0;
+    }
+
+    .purple-text {
+      color: $purper-color;
+    }
+
+    p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: $gray-color;
+    }
+  }
+}
+
 main {
   position: relative;
   height: 95vh;
@@ -240,9 +334,6 @@ main {
   text-transform: uppercase;
 }
 
-/* ========================================================
- MISSIONS
- ========================================================  */
 .leaveBtn {
   color: red;
   border: 1px solid red;
@@ -252,101 +343,6 @@ main {
   color: $purper-color;
   border: 1px solid $purper-color;
 }
-
-.landing-page {
-  position: relative;
-  background-color: $purper-color;
-  overflow: hidden;
-  height: 95vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 0 5vw;
-  
-  #whitebg {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    object-fit: contain;
-  }
-
-  #planet1 {
-    position: absolute;
-    top: 10vw;
-    right: 15vw;
-    width: 10vw;
-  }
-
-  #planet2 {
-    position: absolute;
-    top: 30vw;
-    right: 10vw;
-    width: 10vw;
-    z-index: 1;
-  }
-
-  #planet5 {
-    position: absolute;
-    top: 4vw;
-    right: 35vw;
-    width: 25vw;
-    z-index: 0;
-  }
-
-  #planet3 {
-    position: absolute;
-    right: 5vw;
-    width: 4vw;
-    top: 8vw;
-  }
-
-  #planet4 {
-    position: absolute;
-    top: 5vw;
-    right: 25vw;
-    width: 6vw;
-  }
-
-  #astronaut {
-    position: absolute;
-    top: 15vw;
-    right: 20vw;
-    width: 25vw;
-    z-index: 1;
-  }
-
-  .mission-intro {
-    width: 40%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    h1 {
-      font-family: 'Oswald', sans-serif;
-      line-height: 7vh;
-      font-size: 6rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: $pink-color;
-      margin: 25px 0;
-    }
-
-    .purple-text {
-      color: $purper-color;
-    }
-
-    p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.7rem;
-      font-weight: 400;
-      color: $gray-color;
-    }
-  }
-}
-
 
 .table-container {
   position: relative;
